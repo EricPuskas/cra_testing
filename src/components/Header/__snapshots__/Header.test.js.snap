@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component Should pass snapshot test 1`] = `
+"<header data-test=\\"header\\">
+  <div className=\\"wrap\\">
+    <div className=\\"logo\\">
+      <img src=\\"logo.png\\" alt=\\"logo\\" data-test=\\"logo\\" />
+    </div>
+    <div className=\\"logo-title\\">
+      CRA-Testing
+    </div>
+  </div>
+</header>"
+`;
