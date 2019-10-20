@@ -18,10 +18,12 @@ describe("Button Component", () => {
 
 describe("Renders without crashing", () => {
   let component;
+  let mockFn;
   beforeEach(() => {
+    mockFn = jest.fn();
     const props = {
       buttonText: "Example Button Text",
-      emitEvent: () => {}
+      emitEvent: mockFn
     };
     component = shallow(<Button {...props} />);
   });
@@ -32,5 +34,12 @@ describe("Renders without crashing", () => {
   it("Should render a button", () => {
     const button = findByAttribute(component, "SharedBtn");
     expect(button.length).toBe(1);
+  });
+
+  it("Should emit a callback on click event", () => {
+    const button = findByAttribute(component, "SharedBtn");
+    button.simulate("click");
+    const callback = mockFn.mock.calls.length;
+    expect(callback).toBe(1);
   });
 });
