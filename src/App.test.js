@@ -1,0 +1,34 @@
+import App from "./App";
+import { shallow } from "enzyme";
+import { findByAttribute, testStore } from "../utils";
+import React from "react";
+
+const setup = (initState = {}) => {
+  const store = testStore(initState);
+  const wrapper = shallow(<App store={store} />)
+    .childAt(0)
+    .dive();
+  return wrapper;
+};
+describe("App Component", () => {
+  let wrapper;
+  beforeEach(() => {
+    const initState = {
+      posts: [
+        { userId: 1, title: "Title 1", body: "Some Text" },
+        { userId: 2, title: "Title 2", body: "Some Text" },
+        { userId: 3, title: "Title 3", body: "Some Text" }
+      ]
+    };
+    wrapper = setup(initState);
+  });
+
+  it("Should render without errors", () => {
+    const component = findByAttribute(wrapper, "App");
+    expect(component.length).toBe(1);
+  });
+
+  it("Should pass snapshot test", () => {
+    expect(wrapper.debug()).toMatchSnapshot();
+  });
+});
