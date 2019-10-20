@@ -32,7 +32,7 @@ describe("GetPosts Action", () => {
       const request = moxios.requests.mostRecent();
       request.respondWith({
         status: 200,
-        response: []
+        response: expectedState
       });
     });
     return store.dispatch(getPosts()).then(() => {
