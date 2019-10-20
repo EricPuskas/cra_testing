@@ -26,7 +26,7 @@ describe("Renders without crashing", () => {
     component = shallow(<ListItem {...props} />);
   });
   it("Should pass snapshot test", () => {
-    expect(component.debug()).toMatchSnapshot();
+    expect(component.html()).toMatchSnapshot();
   });
 
   it("Should render without error", () => {

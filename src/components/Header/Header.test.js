@@ -17,6 +17,6 @@ describe("Header Component", () => {
   });
 
   it("Should pass snapshot test", () => {
-    expect(wrapper.debug()).toMatchSnapshot();
+    expect(wrapper.html()).toMatchSnapshot();
   });
 });

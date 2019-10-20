@@ -1,16 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App Component Should pass snapshot test 1`] = `
-"<div className=\\"App\\" data-test=\\"App\\">
-  <Header />
-  <section className=\\"main\\">
-    <Headline header=\\"Posts\\" description=\\"Click button to render posts.\\" tempArr={{...}} />
-    <Button buttonText=\\"Get Posts\\" emitEvent={[Function: fetchPosts]} />
-    <div>
-      <ListItem title=\\"Title 1\\" desc=\\"Some Text\\" />
-      <ListItem title=\\"Title 2\\" desc=\\"Some Text\\" />
-      <ListItem title=\\"Title 3\\" desc=\\"Some Text\\" />
-    </div>
-  </section>
-</div>"
-`;
+exports[`App Component Should pass snapshot test 1`] = `"<div class=\\"App\\" data-test=\\"App\\"><header data-test=\\"header\\"><div class=\\"wrap\\"><div class=\\"logo\\"><img src=\\"logo.png\\" alt=\\"logo\\" data-test=\\"logo\\"/></div><div class=\\"logo-title\\">CRA-Testing</div></div></header><section class=\\"main\\"><div data-test=\\"Headline\\"><h1 data-test=\\"header\\"> Posts </h1><p data-test=\\"description\\"> Click button to render posts. </p></div><button data-test=\\"SharedBtn\\">Get Posts</button><div><div data-test=\\"listItem\\"><h2 data-test=\\"title\\">Title 1</h2><p data-test=\\"desc\\"> Some Text </p></div><div data-test=\\"listItem\\"><h2 data-test=\\"title\\">Title 2</h2><p data-test=\\"desc\\"> Some Text </p></div><div data-test=\\"listItem\\"><h2 data-test=\\"title\\">Title 3</h2><p data-test=\\"desc\\"> Some Text </p></div></div></section></div>"`;

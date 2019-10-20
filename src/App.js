@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/Header/Header";
 import Headline from "./components/Headline/Headline";
 import Button from "./components/Button/Button";
@@ -20,8 +20,12 @@ const tempArr = [
 const App = ({ getPosts, posts }) => {
   const fetchPosts = () => {
     getPosts();
+    handleUpdate();
   };
-
+  const [hideBtn, setHideBtn] = useState(false);
+  const handleUpdate = () => {
+    setHideBtn(!hideBtn);
+  };
   return (
     <div className="App" data-test="App">
       <Header />
@@ -31,11 +35,17 @@ const App = ({ getPosts, posts }) => {
           description="Click button to render posts."
           tempArr={tempArr}
         />
-        <Button buttonText="Get Posts" emitEvent={fetchPosts} />
+        {!hideBtn && (
+          <Button
+            data-test="btn"
+            buttonText="Get Posts"
+            emitEvent={fetchPosts}
+          />
+        )}
         {posts.length > 0 && (
           <div>
             {posts.map(post => (
-              <ListItem key={post.userId} title={post.title} desc={post.body} />
+              <ListItem key={post.id} title={post.title} desc={post.body} />
             ))}
           </div>
         )}

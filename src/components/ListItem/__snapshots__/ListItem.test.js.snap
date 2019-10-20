@@ -1,14 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Renders without crashing Should pass snapshot test 1`] = `
-"<div data-test=\\"listItem\\">
-  <h2 data-test=\\"title\\">
-    Example Title
-  </h2>
-  <p data-test=\\"desc\\">
-     
-    Example Description
-     
-  </p>
-</div>"
-`;
+exports[`Renders without crashing Should pass snapshot test 1`] = `"<div data-test=\\"listItem\\"><h2 data-test=\\"title\\">Example Title</h2><p data-test=\\"desc\\"> Example Description </p></div>"`;

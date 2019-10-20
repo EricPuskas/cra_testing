@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, unmount } from "enzyme";
 import { findByAttribute, checkProps } from "../../../utils";
 import Button from "./Button";
 
@@ -28,7 +28,7 @@ describe("Renders without crashing", () => {
     component = shallow(<Button {...props} />);
   });
   it("Should pass snapshot test", () => {
-    expect(component.debug()).toMatchSnapshot();
+    expect(component.html()).toMatchSnapshot();
   });
 
   it("Should render a button", () => {

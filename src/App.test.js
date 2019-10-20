@@ -15,9 +15,9 @@ describe("App Component", () => {
   beforeEach(() => {
     const initState = {
       posts: [
-        { userId: 1, title: "Title 1", body: "Some Text" },
-        { userId: 2, title: "Title 2", body: "Some Text" },
-        { userId: 3, title: "Title 3", body: "Some Text" }
+        { id: 1, title: "Title 1", body: "Some Text" },
+        { id: 2, title: "Title 2", body: "Some Text" },
+        { id: 3, title: "Title 3", body: "Some Text" }
       ]
     };
     wrapper = setup(initState);
@@ -29,6 +29,6 @@ describe("App Component", () => {
   });
 
   it("Should pass snapshot test", () => {
-    expect(wrapper.debug()).toMatchSnapshot();
+    expect(wrapper.html()).toMatchSnapshot();
   });
 });

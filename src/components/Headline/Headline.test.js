@@ -66,6 +66,6 @@ describe("Headline Component", () => {
 
   it("Should pass snapshot test", () => {
     const component = setup();
-    expect(component.debug()).toMatchSnapshot();
+    expect(component.html()).toMatchSnapshot();
   });
 });
